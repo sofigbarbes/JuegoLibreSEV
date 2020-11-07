@@ -5,15 +5,17 @@ Enemy::Enemy(float x, float y, Game* game)
 
 	state = game->stateMoving;
 
-	aDying = new Animation("res/enemigo_morir.png", width, height,
-		280, 40, 6, 8, false, game);
+	aDying = new Animation("res/animacion_pincho_morir.png", width, height,
+		120, 40, 3, 3, false, game);
 
-	aMoving = new Animation("res/enemigo_movimiento.png", width, height,
-		108, 40, 6, 3, true, game);
+	aMoving = new Animation("res/animacion_pincho.png", width, height,
+		120, 40, 3, 3, true, game);
 	animation = aMoving;
 
 	vx = 3;
+	vy = 3;
 	vxIntelligence = -3;
+	vyIntelligence = -3;
 	vx = vxIntelligence;
 
 }
@@ -42,9 +44,12 @@ void Enemy::update() {
 	if (state != game->stateDying) {
 		// no está muerto y se ha quedado parado
 		if (vx == 0) {
-			
 			vxIntelligence = vxIntelligence * -1;
 			vx = -vxIntelligence;
+		}
+		if (vy == 0) {
+			vyIntelligence = vyIntelligence * -1;
+			vy = -vyIntelligence;
 		}
 		if (outRight) {
 			// mover hacia la izquierda vx tiene que ser negativa
@@ -63,6 +68,7 @@ void Enemy::update() {
 	}
 	else {
 		vx = 0;
+		vy = 0;
 	}
 }
 

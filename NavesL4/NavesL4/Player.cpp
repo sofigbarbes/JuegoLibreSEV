@@ -143,15 +143,22 @@ Projectile* Player::shoot() {
 		Projectile* projectile = new Projectile(x, y, game);
 		if (orientation == game->orientationLeft) {
 			projectile->vx = projectile->vx - 9;
+			projectile->vy = vy;
+
 		}
 		else if (orientation == game->orientationRight) {
 			projectile->vx = projectile->vx + 9;
+			projectile->vy =vy ;
 		}
 		else if (orientation == game->orientationDown) {
 			projectile->vy = projectile->vy + 9;
+			projectile->vx = vx;
+
 		}
 		else if (orientation == game->orientationUp) {
 			projectile->vy = projectile->vy - 9;
+			projectile->vx = vx;
+
 		}
 		return projectile;
 	}

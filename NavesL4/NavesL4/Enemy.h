@@ -11,6 +11,7 @@ public:
 	void update();
 	void impacted(); // Recibe impacto y pone animación de morir
 	float vxIntelligence;
+	float vyIntelligence;
 	int state;
 	Animation* aDying;
 	Animation* aMoving;

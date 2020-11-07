@@ -22,7 +22,8 @@ void GameLayer::init() {
 	scrollX = 0;
 	tiles.clear();
 
-	
+	enemiesInLevel=0;
+
 	points = 0;
 	textPoints = new Text("hola", WIDTH * 0.92, HEIGHT * 0.04, game);
 	textPoints->content = to_string(points);
@@ -94,6 +95,14 @@ void GameLayer::loadMapObject(char character, float x, float y)
 	}
 	case '#': {
 		Tile* tile = new Tile("res/plataforma__.png", x, y, game);
+		// modificación para empezar a contar desde el suelo.
+		tile->y = tile->y - tile->height / 2;
+		tiles.push_back(tile);
+		space->addStaticActor(tile);
+		break;
+	}
+	case 'X': {
+		Tile* tile = new Tile("res/obstacle.png", x, y, game);
 		// modificación para empezar a contar desde el suelo.
 		tile->y = tile->y - tile->height / 2;
 		tiles.push_back(tile);
@@ -311,7 +320,6 @@ void GameLayer::update() {
 	deleteProjectiles.clear();
 
 
-	cout << "update GameLayer" << endl;
 }
 
 void GameLayer::calculateScroll() {

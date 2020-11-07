@@ -16,8 +16,8 @@ void Space::update() {
 
         // Aun no se han detectado choques
         actor->collisionDown = false;
-        actor->outLeft = true;
-        actor->outRight = true;
+        actor->outLeft = false;
+        actor->outRight = false;
 
 		// MoverDerecha / izquierda
 		updateMoveRight(actor);
@@ -52,10 +52,11 @@ void Space::updateMoveRight(Actor* dynamicAct) {
                 // Comprobamos si la distancia al estático es menor
                 // que nuestro movimientoPosible actual
                 if (possibleMovement >= leftStatic - rightDynamic) {
-                    cout << "vx: " << dynamicAct->vx << "  vy: " << dynamicAct->vy << endl;
                     // La distancia es MENOR que nuestro movimiento posible
                     // Tenemos que actualizar el movimiento posible a uno menor
                     possibleMovement = leftStatic - rightDynamic;
+                   // cout << "Possible movement" << possibleMovement << endl;
+
                 }
             }
         }
@@ -174,14 +175,7 @@ void Space::updateMoveDown(Actor* dynamicAct) {
                     // La distancia es MENOR que nuestro movimiento posible
                     // Tenemos que actualizar el movimiento posible a uno menor
                     possibleMovement = topStatic - downDynamic;
-                    dynamicAct->collisionDown = true;
-
-                    if (rightDynamic <= rightStatic) {
-                        dynamicAct->outRight = false;
-                    }
-                    if (leftDynamic >= leftStatic) {
-                        dynamicAct->outLeft = false;
-                    }
+                   
 
                 }
             }
