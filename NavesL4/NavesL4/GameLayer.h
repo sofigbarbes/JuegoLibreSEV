@@ -5,6 +5,8 @@
 #include "Background.h"
 
 #include "Enemy.h"
+#include "EnemyBase.h"
+#include "EnemyStatic.h"
 #include "Projectile.h"
 #include "Text.h"
 #include "Tile.h"
@@ -46,11 +48,14 @@ public:
 
 	Text* textPoints;
 	int points;
+	Text* textLifes;
+	Actor* backgroundLifes;
+
 	int newEnemyTime = 0;
 	Player* player;
 	Background* background;
 	Actor* backgroundPoints;
-	list<Enemy*> enemies;
+	list<EnemyBase*> enemies;
 	list<Projectile*> projectiles;
 
 	bool controlContinue = false;

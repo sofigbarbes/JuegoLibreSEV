@@ -1,15 +1,15 @@
 #pragma once
 
-#include "EnemyBase.h"
+#include "Actor.h"
 #include "Animation.h" 
 
-class Enemy : public EnemyBase
+class EnemyBase : public Actor
 {
 public:
-	Enemy(float x, float y, Game* game);
+	EnemyBase(float x, float y, Game* game, string filename);
 	void draw(float scrollX = 0) override; // Va a sobrescribir
-	void update() override;
-	void impacted() override; // Recibe impacto y pone animación de morir
+	virtual void update();
+	virtual void impacted(); // Recibe impacto y pone animación de morir
 	float vxIntelligence;
 	float vyIntelligence;
 	int state;

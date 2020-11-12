@@ -46,9 +46,8 @@ public:
 	int const inputGamePad = 3;
 
 	int const stateMoving = 1;
-	int const stateJumping = 2;
-	int const stateDying = 3;
-	int const stateDead = 4;
+	int const stateDying = 2;
+	int const stateDead = 3;
 	int const stateShooting = 5;
 
 	int const orientationRight = 1;

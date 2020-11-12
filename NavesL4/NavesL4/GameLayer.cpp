@@ -22,16 +22,19 @@ void GameLayer::init() {
 	scrollX = 0;
 	tiles.clear();
 
-	enemiesInLevel=0;
+	enemiesInLevel = 0;
 
 	points = 0;
-	textPoints = new Text("hola", WIDTH * 0.92, HEIGHT * 0.04, game);
+	textPoints = new Text("puntos", WIDTH * 0.92, HEIGHT * 0.04, game);
 	textPoints->content = to_string(points);
+	textLifes = new Text("vidas", WIDTH * 0.2, HEIGHT * 0.04, game);
 
 
 	background = new Background("res/fondo__.png", WIDTH * 0.5, HEIGHT * 0.5, -1, game);
 	backgroundPoints = new Actor("res/icono_puntos.png",
 		WIDTH * 0.85, HEIGHT * 0.05, 24, 24, game);
+	backgroundLifes = new Actor("res/corazon.png",
+		WIDTH * 0.15, HEIGHT * 0.05, 24, 24, game);
 
 	enemies.clear(); // Vaciar por si reiniciamos el juego
 	projectiles.clear(); // Vaciar por si reiniciamos el juego
@@ -78,7 +81,16 @@ void GameLayer::loadMapObject(char character, float x, float y)
 		break;
 	}
 	case 'E': {
-		Enemy* enemy = new Enemy(x, y, game);
+		EnemyBase* enemy = new Enemy(x, y, game);
+		// modificación para empezar a contar desde el suelo.
+		enemy->y = enemy->y - enemy->height / 2;
+		enemies.push_back(enemy);
+		space->addDynamicActor(enemy);
+		enemiesInLevel++;
+		break;
+	}
+	case 'O': {
+		EnemyBase* enemy = new EnemyStatic(x, y, game);
 		// modificación para empezar a contar desde el suelo.
 		enemy->y = enemy->y - enemy->height / 2;
 		enemies.push_back(enemy);
@@ -91,6 +103,7 @@ void GameLayer::loadMapObject(char character, float x, float y)
 		// modificación para empezar a contar desde el suelo.
 		player->y = player->y - player->height / 2;
 		space->addDynamicActor(player);
+		textLifes->content = to_string(player->lifes);
 		break;
 	}
 	case '#': {
@@ -195,7 +208,7 @@ void GameLayer::update() {
 	if (pause) {
 		return;
 	}
-
+	cout << "Size: "<< enemies.size() << endl;
 	// Nivel superado
 	if (cup->isOverlap(player)) {
 		if (enemiesInLevel == 0) {
@@ -224,12 +237,12 @@ void GameLayer::update() {
 	}
 
 
-
 	// Colisiones
 	for (auto const& enemy : enemies) {
 		if (player->isOverlap(enemy)) {
 			if (enemy->state != game->stateDying && enemy->state != game->stateDead) {
 				player->loseLife();
+				textLifes->content = to_string(player->lifes);
 				if (player->lifes <= 0) {
 					init();
 					return;
@@ -239,9 +252,8 @@ void GameLayer::update() {
 	}
 
 
-	// Colisiones , Enemy - Projectile
 
-	list<Enemy*> deleteEnemies;
+	list<EnemyBase*> deleteEnemies;
 	list<Projectile*> deleteProjectiles;
 	for (auto const& projectile : projectiles) {
 		if (projectile->isInRender(scrollX) == false) {
@@ -280,7 +292,7 @@ void GameLayer::update() {
 					bool pInList = std::find(deleteProjectiles.begin(),
 						deleteProjectiles.end(),
 						projectile) != deleteProjectiles.end();
-
+					enemy->state = game->stateDying;
 					if (!pInList) {
 						deleteProjectiles.push_back(projectile);
 					}
@@ -295,6 +307,7 @@ void GameLayer::update() {
 	}
 
 	for (auto const& enemy : enemies) {
+		cout << enemy->state << endl;
 		if (enemy->state == game->stateDead) {
 			bool eInList = std::find(deleteEnemies.begin(),
 				deleteEnemies.end(),
@@ -358,6 +371,9 @@ void GameLayer::draw() {
 
 	backgroundPoints->draw();
 	textPoints->draw();
+
+	backgroundLifes->draw();
+	textLifes->draw();
 
 	// HUD
 	if (game->input == game->inputMouse) {

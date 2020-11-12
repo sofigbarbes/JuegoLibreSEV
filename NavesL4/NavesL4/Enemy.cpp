@@ -1,7 +1,7 @@
 #include "Enemy.h"
 
 Enemy::Enemy(float x, float y, Game* game)
-	: Actor("res/enemigo.png", x, y, 36, 40, game) {
+	: EnemyBase( x,  y,  game,"res/enemigo.png") {
 
 	state = game->stateMoving;
 
@@ -72,15 +72,17 @@ void Enemy::update() {
 	}
 }
 
-void Enemy::impacted() {
-	if (state != game->stateDying) {
-		state = game->stateDying;
-	}
-}
+
 
 
 void Enemy::draw(float scrollX) {
 	animation->draw(x - scrollX, y);
+}
+
+void Enemy::impacted() {
+	if (state != game->stateDying) {
+		state = game->stateDying;
+	}
 }
 
 

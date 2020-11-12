@@ -39,21 +39,12 @@ Player::Player(float x, float y, Game* game)
 
 void Player::update() {
 	// En el aire y moviéndose, PASA a estar saltando
-	if (onAir && state == game->stateMoving) {
-		state = game->stateJumping;
-	}
-	// No está en el aire y estaba saltando, PASA a moverse
-	if (!onAir && state == game->stateJumping) {
-		state = game->stateMoving;
-	}
-
+	
 
 	if (invulnerableTime > 0) {
 		invulnerableTime--;
 	}
-
 	bool endAnimation = animation->update();
-
 
 	// Acabo la animación, no sabemos cual
 	if (endAnimation) {
@@ -62,8 +53,6 @@ void Player::update() {
 			state = game->stateMoving;
 		}
 	}
-
-
 	// Establecer orientación
 	if (vx > 0) {
 		orientation = game->orientationRight;
@@ -90,7 +79,6 @@ void Player::update() {
 			if (orientation == game->orientationLeft) {
 				animation = aRunningLeft;
 			}
-
 		}
 		if (vx == 0) {
 			if (vy != 0) {
@@ -114,15 +102,12 @@ void Player::update() {
 					animation = aIdleDown;
 				}
 			}
-
 		}
 	}
-
 
 	if (shootTime > 0) {
 		shootTime--;
 	}
-
 }
 
 void Player::moveX(float axis) {
@@ -148,17 +133,15 @@ Projectile* Player::shoot() {
 		}
 		else if (orientation == game->orientationRight) {
 			projectile->vx = projectile->vx + 9;
-			projectile->vy =vy ;
+			projectile->vy = vy;
 		}
 		else if (orientation == game->orientationDown) {
 			projectile->vy = projectile->vy + 9;
 			projectile->vx = vx;
-
 		}
 		else if (orientation == game->orientationUp) {
 			projectile->vy = projectile->vy - 9;
 			projectile->vx = vx;
-
 		}
 		return projectile;
 	}
@@ -189,8 +172,7 @@ void Player::loseLife() {
 	if (invulnerableTime <= 0) {
 		if (lifes > 0) {
 			lifes--;
-			invulnerableTime = 100;
-			// 100 actualizaciones 
+			invulnerableTime = 80;
 		}
 	}
 }
