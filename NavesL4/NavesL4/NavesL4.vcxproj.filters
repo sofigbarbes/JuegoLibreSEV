@@ -25,6 +25,18 @@
     <Filter Include="Archivos de origen\actores">
       <UniqueIdentifier>{d72f9674-6a1c-47ec-9ac3-e65b9c20e91d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de origen\actores\personajes">
+      <UniqueIdentifier>{e28f94da-8f84-4adb-a9ed-22400879c962}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\actores\objetos">
+      <UniqueIdentifier>{e9c1cffd-cac6-47f3-b734-2d325e5c4918}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\actores\objetos">
+      <UniqueIdentifier>{a21d5c6e-b1d6-4b0b-a06d-4679fd495897}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\actores\personajes">
+      <UniqueIdentifier>{a9525f67-35da-477a-857b-04afa0b95d67}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -42,16 +54,7 @@
     <ClCompile Include="Actor.cpp">
       <Filter>Archivos de origen\actores</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Archivos de origen\actores</Filter>
-    </ClCompile>
     <ClCompile Include="Background.cpp">
-      <Filter>Archivos de origen\actores</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>Archivos de origen\actores</Filter>
-    </ClCompile>
-    <ClCompile Include="Projectile.cpp">
       <Filter>Archivos de origen\actores</Filter>
     </ClCompile>
     <ClCompile Include="Text.cpp">
@@ -63,9 +66,6 @@
     <ClCompile Include="Audio.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Tile.cpp">
-      <Filter>Archivos de origen\actores</Filter>
-    </ClCompile>
     <ClCompile Include="Space.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
@@ -75,11 +75,26 @@
     <ClCompile Include="MenuLayer.cpp">
       <Filter>Archivos de origen\actores</Filter>
     </ClCompile>
-    <ClCompile Include="EnemyStatic.cpp">
-      <Filter>Archivos de origen\actores</Filter>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Archivos de origen\actores\personajes</Filter>
     </ClCompile>
     <ClCompile Include="EnemyBase.cpp">
-      <Filter>Archivos de origen\actores</Filter>
+      <Filter>Archivos de origen\actores\personajes</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyStatic.cpp">
+      <Filter>Archivos de origen\actores\personajes</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Archivos de origen\actores\personajes</Filter>
+    </ClCompile>
+    <ClCompile Include="Projectile.cpp">
+      <Filter>Archivos de origen\actores\objetos</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectilEnemigo.cpp">
+      <Filter>Archivos de origen\actores\objetos</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>Archivos de origen\actores\objetos</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -95,16 +110,7 @@
     <ClInclude Include="Actor.h">
       <Filter>Archivos de encabezado\actores</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Archivos de encabezado\actores</Filter>
-    </ClInclude>
     <ClInclude Include="Background.h">
-      <Filter>Archivos de encabezado\actores</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>Archivos de encabezado\actores</Filter>
-    </ClInclude>
-    <ClInclude Include="Projectile.h">
       <Filter>Archivos de encabezado\actores</Filter>
     </ClInclude>
     <ClInclude Include="Text.h">
@@ -116,9 +122,6 @@
     <ClInclude Include="Audio.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Tile.h">
-      <Filter>Archivos de encabezado\actores</Filter>
-    </ClInclude>
     <ClInclude Include="Space.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
@@ -128,11 +131,26 @@
     <ClInclude Include="MenuLayer.h">
       <Filter>Archivos de encabezado\actores</Filter>
     </ClInclude>
-    <ClInclude Include="EnemyStatic.h">
-      <Filter>Archivos de encabezado\actores</Filter>
+    <ClInclude Include="Enemy.h">
+      <Filter>Archivos de encabezado\actores\personajes</Filter>
     </ClInclude>
     <ClInclude Include="EnemyBase.h">
-      <Filter>Archivos de encabezado\actores</Filter>
+      <Filter>Archivos de encabezado\actores\personajes</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyStatic.h">
+      <Filter>Archivos de encabezado\actores\personajes</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Archivos de encabezado\actores\personajes</Filter>
+    </ClInclude>
+    <ClInclude Include="Projectile.h">
+      <Filter>Archivos de encabezado\actores\objetos</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectilEnemigo.h">
+      <Filter>Archivos de encabezado\actores\objetos</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>Archivos de encabezado\actores\objetos</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

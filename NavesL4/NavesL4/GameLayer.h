@@ -8,6 +8,7 @@
 #include "EnemyBase.h"
 #include "EnemyStatic.h"
 #include "Projectile.h"
+#include "ProjectilEnemigo.h"
 #include "Text.h"
 #include "Tile.h"
 #include "Pad.h"
@@ -25,6 +26,7 @@ public:
 	void init() override;
 	void processControls() override;
 	void update() override;
+	void enemyShoot();
 	void draw() override;
 	void keysToControls(SDL_Event event);
 	void mouseToControls(SDL_Event event); // USO DE MOUSE
@@ -57,6 +59,7 @@ public:
 	Actor* backgroundPoints;
 	list<EnemyBase*> enemies;
 	list<Projectile*> projectiles;
+	list<ProjectilEnemigo*> projectilesEnemigo;
 
 	bool controlContinue = false;
 	bool controlShoot = false;

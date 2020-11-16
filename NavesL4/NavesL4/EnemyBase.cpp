@@ -12,8 +12,14 @@ void EnemyBase::update()
 {
 }
 
+ProjectilEnemigo* EnemyBase::shoot(Player* player)
+{
+	return nullptr;
+}
+
 void EnemyBase::impacted()
 {
+	cout << "Inside enemyBase impacted" << endl;
 }
 
 

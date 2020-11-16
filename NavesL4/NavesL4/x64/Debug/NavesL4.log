@@ -1,52 +1,12 @@
-﻿  Actor.cpp
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Actor.cpp(10,12): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Actor.cpp(11,12): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Animation.cpp
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Animation.cpp(10,21): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Animation.cpp(11,22): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Animation.cpp(12,20): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Animation.cpp(13,21): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Animation.cpp(28,13): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Animation.cpp(29,13): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Animation.cpp(45,26): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Animation.cpp(53,20): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Animation.cpp(54,20): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Audio.cpp
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Audio.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-  Background.cpp
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Background.cpp(19,9): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: El directorio intermedio (x64\Debug\) contiene archivos compartidos de otro proyecto (NavesL4.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación.
   Enemy.cpp
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Enemy.cpp(6,63): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Enemy.cpp(6,56): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Enemy.cpp(18,8): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Enemy.cpp(23,21): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Enemy.cpp(23,18): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  Game.cpp
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Audio.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Game.cpp(65,56): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Game.cpp(65,35): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-  GameLayer.cpp
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Audio.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\jorda\source\repos\NavesL4\NavesL4\GameLayer.cpp(14,66): warning C4305: 'argumento': truncamiento de 'double' a 'float'
-  Layer.cpp
-  Main.cpp
-  Player.cpp
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Audio.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Player.cpp(6,68): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Player.cpp(6,61): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Player.cpp(19,8): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Player.cpp(20,8): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Player.cpp(36,28): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Player.cpp(36,25): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Player.cpp(44,21): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Player.cpp(44,18): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  Projectile.cpp
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Projectile.cpp(9,8): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Text.cpp
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Text.cpp(5,12): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\jorda\source\repos\NavesL4\NavesL4\Text.cpp(6,12): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-  Generando código...
-Actor.obj : error LNK2019: símbolo externo SDL_RenderCopyEx sin resolver al que se hace referencia en la función "public: virtual void __cdecl Actor::draw(void)" (?draw@Actor@@UEAAXXZ)
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\Audio.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\Enemy.cpp(8,66): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\Enemy.cpp(8,59): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\Enemy.cpp(11,61): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\Enemy.cpp(11,54): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\Enemy.cpp(79,31): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+Actor.obj : error LNK2019: símbolo externo SDL_RenderCopyEx sin resolver al que se hace referencia en la función "public: virtual void __cdecl Actor::draw(float)" (?draw@Actor@@UEAAXM@Z)
 Animation.obj : error LNK2001: símbolo externo SDL_RenderCopyEx sin resolver
 Audio.obj : error LNK2019: símbolo externo SDL_RWFromFile sin resolver al que se hace referencia en la función "public: __cdecl Audio::Audio(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,bool)" (??0Audio@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z)
 Audio.obj : error LNK2019: símbolo externo SDL_OpenAudioDevice sin resolver al que se hace referencia en la función "public: __cdecl Audio::Audio(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,bool)" (??0Audio@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z)
@@ -62,6 +22,7 @@ Audio.obj : error LNK2019: símbolo externo Mix_LoadMUS sin resolver al que se h
 Audio.obj : error LNK2019: símbolo externo Mix_FreeMusic sin resolver al que se hace referencia en la función "public: __cdecl Audio::~Audio(void)" (??1Audio@@QEAA@XZ)
 Audio.obj : error LNK2019: símbolo externo Mix_PlayMusic sin resolver al que se hace referencia en la función "public: void __cdecl Audio::play(void)" (?play@Audio@@QEAAXXZ)
 Audio.obj : error LNK2019: símbolo externo Mix_CloseAudio sin resolver al que se hace referencia en la función "public: __cdecl Audio::~Audio(void)" (??1Audio@@QEAA@XZ)
+EnemyBase.obj : error LNK2001: símbolo externo "public: virtual class Projectile * __cdecl EnemyBase::shoot(class Player *)" (?shoot@EnemyBase@@UEAAPEAVProjectile@@PEAVPlayer@@@Z) sin resolver
 Game.obj : error LNK2019: símbolo externo SDL_GetError sin resolver al que se hace referencia en la función "public: __cdecl Game::Game(void)" (??0Game@@QEAA@XZ)
 Game.obj : error LNK2019: símbolo externo SDL_GetCurrentDisplayMode sin resolver al que se hace referencia en la función "public: void __cdecl Game::scale(void)" (?scale@Game@@QEAAXXZ)
 Game.obj : error LNK2019: símbolo externo SDL_SetWindowTitle sin resolver al que se hace referencia en la función "public: __cdecl Game::Game(void)" (??0Game@@QEAA@XZ)
@@ -77,8 +38,15 @@ Game.obj : error LNK2019: símbolo externo SDL_Init sin resolver al que se hace 
 Game.obj : error LNK2019: símbolo externo IMG_Load sin resolver al que se hace referencia en la función "public: struct SDL_Texture * __cdecl Game::getTexture(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?getTexture@Game@@QEAAPEAUSDL_Texture@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
 Game.obj : error LNK2019: símbolo externo TTF_Init sin resolver al que se hace referencia en la función "public: __cdecl Game::Game(void)" (??0Game@@QEAA@XZ)
 Game.obj : error LNK2019: símbolo externo TTF_OpenFont sin resolver al que se hace referencia en la función "public: __cdecl Game::Game(void)" (??0Game@@QEAA@XZ)
+GameLayer.obj : error LNK2019: símbolo externo SDL_GameControllerOpen sin resolver al que se hace referencia en la función "public: __cdecl GameLayer::GameLayer(class Game *)" (??0GameLayer@@QEAA@PEAVGame@@@Z)
+MenuLayer.obj : error LNK2001: símbolo externo SDL_GameControllerOpen sin resolver
+GameLayer.obj : error LNK2019: símbolo externo SDL_GameControllerGetAxis sin resolver al que se hace referencia en la función "public: void __cdecl GameLayer::gamePadToControls(union SDL_Event)" (?gamePadToControls@GameLayer@@QEAAXTSDL_Event@@@Z)
+GameLayer.obj : error LNK2019: símbolo externo SDL_GameControllerGetButton sin resolver al que se hace referencia en la función "public: void __cdecl GameLayer::gamePadToControls(union SDL_Event)" (?gamePadToControls@GameLayer@@QEAAXTSDL_Event@@@Z)
+MenuLayer.obj : error LNK2001: símbolo externo SDL_GameControllerGetButton sin resolver
 GameLayer.obj : error LNK2019: símbolo externo SDL_PollEvent sin resolver al que se hace referencia en la función "public: virtual void __cdecl GameLayer::processControls(void)" (?processControls@GameLayer@@UEAAXXZ)
+MenuLayer.obj : error LNK2001: símbolo externo SDL_PollEvent sin resolver
 GameLayer.obj : error LNK2019: símbolo externo SDL_RenderPresent sin resolver al que se hace referencia en la función "public: virtual void __cdecl GameLayer::draw(void)" (?draw@GameLayer@@UEAAXXZ)
+MenuLayer.obj : error LNK2001: símbolo externo SDL_RenderPresent sin resolver
 Text.obj : error LNK2019: símbolo externo SDL_FreeSurface sin resolver al que se hace referencia en la función "public: void __cdecl Text::draw(void)" (?draw@Text@@QEAAXXZ)
 Text.obj : error LNK2019: símbolo externo SDL_RenderCopy sin resolver al que se hace referencia en la función "public: void __cdecl Text::draw(void)" (?draw@Text@@QEAAXXZ)
 Text.obj : error LNK2019: símbolo externo SDL_DestroyTexture sin resolver al que se hace referencia en la función "public: void __cdecl Text::draw(void)" (?draw@Text@@QEAAXXZ)
@@ -88,4 +56,4 @@ C:\videojuegos\lib\SDL2main.lib : warning LNK4272: el tipo de máquina de biblio
 C:\videojuegos\lib\SDL2_image.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
 C:\videojuegos\lib\SDL2_ttf.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
 C:\videojuegos\lib\SDL2_mixer.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
-C:\Users\jorda\source\repos\NavesL4\x64\Debug\NavesL4.exe : fatal error LNK1120: 35 externos sin resolver
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\x64\Debug\Juego libre.exe : fatal error LNK1120: 39 externos sin resolver

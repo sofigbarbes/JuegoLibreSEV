@@ -38,6 +38,7 @@ void GameLayer::init() {
 
 	enemies.clear(); // Vaciar por si reiniciamos el juego
 	projectiles.clear(); // Vaciar por si reiniciamos el juego
+	projectilesEnemigo.clear(); // Vaciar por si reiniciamos el juego
 
 	loadMap("res/" + to_string(game->currentLevel) + ".txt");
 }
@@ -63,8 +64,7 @@ void GameLayer::loadMap(string name) {
 				float y = 32 + i * 32; // y suelo
 				loadMapObject(character, x, y);
 			}
-
-			cout << character << endl;
+			 
 		}
 	}
 	streamFile.close();
@@ -208,7 +208,6 @@ void GameLayer::update() {
 	if (pause) {
 		return;
 	}
-	cout << "Size: "<< enemies.size() << endl;
 	// Nivel superado
 	if (cup->isOverlap(player)) {
 		if (enemiesInLevel == 0) {
@@ -236,11 +235,12 @@ void GameLayer::update() {
 		enemy->update();
 	}
 
-
+	
 	// Colisiones
 	for (auto const& enemy : enemies) {
 		if (player->isOverlap(enemy)) {
 			if (enemy->state != game->stateDying && enemy->state != game->stateDead) {
+				player->loseLife();
 				player->loseLife();
 				textLifes->content = to_string(player->lifes);
 				if (player->lifes <= 0) {
@@ -255,9 +255,9 @@ void GameLayer::update() {
 
 	list<EnemyBase*> deleteEnemies;
 	list<Projectile*> deleteProjectiles;
+	list<ProjectilEnemigo*> deleteProjectilesEnemigo;
 	for (auto const& projectile : projectiles) {
 		if (projectile->isInRender(scrollX) == false) {
-
 			bool pInList = std::find(deleteProjectiles.begin(),
 				deleteProjectiles.end(),
 				projectile) != deleteProjectiles.end();
@@ -285,6 +285,22 @@ void GameLayer::update() {
 	}
 
 
+	for (auto const& projectile : projectilesEnemigo) {
+		for (auto const& tile : tiles) {
+
+			if (tile->isOverlap(projectile)) {
+				bool pInList = std::find(deleteProjectilesEnemigo.begin(),
+					deleteProjectilesEnemigo.end(),
+					projectile) != deleteProjectilesEnemigo.end();
+
+				if (!pInList) {
+					deleteProjectilesEnemigo.push_back(projectile);
+				}
+			}
+		}
+	}
+
+
 	for (auto const& enemy : enemies) {
 		for (auto const& projectile : projectiles) {
 			if (enemy->isOverlap(projectile)) {
@@ -306,8 +322,7 @@ void GameLayer::update() {
 		}
 	}
 
-	for (auto const& enemy : enemies) {
-		cout << enemy->state << endl;
+	for (EnemyBase* enemy : enemies) {
 		if (enemy->state == game->stateDead) {
 			bool eInList = std::find(deleteEnemies.begin(),
 				deleteEnemies.end(),
@@ -316,12 +331,14 @@ void GameLayer::update() {
 			if (!eInList) {
 				deleteEnemies.push_back(enemy);
 			}
+			delete(enemy);
 		}
 	}
 
 	for (auto const& delEnemy : deleteEnemies) {
 		enemies.remove(delEnemy);
 		space->removeDynamicActor(delEnemy);
+		delete(delEnemy);
 	}
 	deleteEnemies.clear();
 
@@ -332,9 +349,29 @@ void GameLayer::update() {
 	}
 	deleteProjectiles.clear();
 
+	for (auto const& delProjectile : deleteProjectilesEnemigo) {
+		projectilesEnemigo.remove(delProjectile);
+		space->removeDynamicActor(delProjectile);
+		delete delProjectile;
+	}
+	deleteProjectiles.clear();
+	deleteProjectilesEnemigo.clear();
+
+	enemyShoot();
 
 }
-
+void GameLayer::enemyShoot() {
+	for (EnemyBase* e : enemies) {
+		if (e->isShooter) {
+			ProjectilEnemigo* p = e->shoot(player);
+			if (p != NULL) {
+				space->addDynamicActor(p);
+				projectilesEnemigo.push_back(p);
+			}
+		}
+	}
+	
+}
 void GameLayer::calculateScroll() {
 	// limite izquierda
 	if (player->x > WIDTH * 0.3) {
@@ -363,6 +400,9 @@ void GameLayer::draw() {
 	for (auto const& projectile : projectiles) {
 		projectile->draw(scrollX);
 	}
+	for (auto const& projectile : projectilesEnemigo) {
+		projectile->draw(scrollX);
+	}
 	cup->draw(scrollX);
 	player->draw(scrollX);
 	for (auto const& enemy : enemies) {
@@ -375,12 +415,7 @@ void GameLayer::draw() {
 	backgroundLifes->draw();
 	textLifes->draw();
 
-	// HUD
-	if (game->input == game->inputMouse) {
-		buttonJump->draw(); // NO TIENEN SCROLL, POSICION FIJA
-		buttonShoot->draw(); // NO TIENEN SCROLL, POSICION FIJA
-		pad->draw(); // NO TIENEN SCROLL, POSICION FIJA
-	}
+
 	if (pause) {
 		message->draw();
 	}
@@ -395,9 +430,7 @@ void GameLayer::gamePadToControls(SDL_Event event) {
 	bool buttonB = SDL_GameControllerGetButton(gamePad, SDL_CONTROLLER_BUTTON_B);
 	// SDL_CONTROLLER_BUTTON_A, SDL_CONTROLLER_BUTTON_B
 	// SDL_CONTROLLER_BUTTON_X, SDL_CONTROLLER_BUTTON_Y
-	cout << "botones:" << buttonA << "," << buttonB << endl;
 	int stickX = SDL_GameControllerGetAxis(gamePad, SDL_CONTROLLER_AXIS_LEFTX);
-	cout << "stickX" << stickX << endl;
 
 	// Retorna aproximadamente entre [-32800, 32800], el centro debería estar en 0
 	// Si el mando tiene "holgura" el centro varia [-4000 , 4000]
@@ -407,6 +440,7 @@ void GameLayer::gamePadToControls(SDL_Event event) {
 	else if (stickX < -4000) {
 		controlMoveX = -1;
 	}
+
 	else {
 		controlMoveX = 0;
 	}

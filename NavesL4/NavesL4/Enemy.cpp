@@ -80,9 +80,15 @@ void Enemy::draw(float scrollX) {
 }
 
 void Enemy::impacted() {
+	cout << "Inside Enemy impacted" << endl;
 	if (state != game->stateDying) {
 		state = game->stateDying;
 	}
+}
+
+ProjectilEnemigo* Enemy::shoot(Player* player)
+{
+	return nullptr;
 }
 
 
