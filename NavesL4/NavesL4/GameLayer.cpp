@@ -338,7 +338,6 @@ void GameLayer::update() {
 	for (auto const& delEnemy : deleteEnemies) {
 		enemies.remove(delEnemy);
 		space->removeDynamicActor(delEnemy);
-		delete(delEnemy);
 	}
 	deleteEnemies.clear();
 

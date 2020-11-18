@@ -13,7 +13,6 @@ public:
 	ProjectilEnemigo* shoot(Player* player) override;
 	void update() override;
 	void impacted(); // Recibe impacto y pone animación de morir
-	int state;
 	int shootTime = 30;
 	int shootCadence = 30;
 	
