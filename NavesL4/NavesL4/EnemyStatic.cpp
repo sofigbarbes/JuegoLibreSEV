@@ -12,6 +12,7 @@ EnemyStatic::EnemyStatic(float x, float y, Game* game)
 		40, 32, 1, 1, true, game);
 	animation = aMoving;
 	isShooter = true;
+	lifes = 3;
 }
 
 void EnemyStatic::update() {
@@ -37,8 +38,15 @@ void EnemyStatic::update() {
 }
 
 void EnemyStatic::impacted() {
-	if (state != game->stateDying) {
-		state = game->stateDying;
+	cout << "Inside Enemy impacted" << endl;
+	cout << "Lifes: " << lifes << endl;
+	if (lifes <= 1) {
+		if (state != game->stateDying) {
+			state = game->stateDead;
+		}
+	}
+	else {
+		lifes--;
 	}
 }
 
@@ -65,7 +73,7 @@ ProjectilEnemigo* EnemyStatic::shoot(Player* player) {
 
 		float x1 = x + 100 * dx;
 		float y1 = y + 100 * dy;
-		return new ProjectilEnemigo (x1, y1, dx, dy, game); //x,y,vx,vy,game
+		return new ProjectilEnemigo(x1, y1, dx, dy, game); //x,y,vx,vy,game
 
 		/*
 		int v1 = pow(player->x - x, 2);

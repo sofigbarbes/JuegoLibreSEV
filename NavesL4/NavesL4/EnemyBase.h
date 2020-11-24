@@ -20,4 +20,5 @@ public:
 	Animation* aMoving;
 	Animation* animation; // Referencia a la animación mostrada
 	bool isShooter = false;
+	int lifes;
 };

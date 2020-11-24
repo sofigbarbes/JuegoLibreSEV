@@ -17,6 +17,7 @@ Enemy::Enemy(float x, float y, Game* game)
 	vxIntelligence = -3;
 	vyIntelligence = -3;
 	vx = vxIntelligence;
+	lifes = 1;
 
 }
 
@@ -81,8 +82,13 @@ void Enemy::draw(float scrollX) {
 
 void Enemy::impacted() {
 	cout << "Inside Enemy impacted" << endl;
-	if (state != game->stateDying) {
-		state = game->stateDying;
+	if (lifes <= 1) {
+		if (state != game->stateDying) {
+			state = game->stateDying;
+		}
+	}
+	else {
+		lifes--;
 	}
 }
 

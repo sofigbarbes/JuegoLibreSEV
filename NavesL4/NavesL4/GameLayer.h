@@ -11,6 +11,7 @@
 #include "ProjectilEnemigo.h"
 #include "Text.h"
 #include "Tile.h"
+#include "TileDestructible.h"
 #include "Pad.h"
 
 #include "Space.h" // importar
@@ -26,6 +27,7 @@ public:
 	void init() override;
 	void processControls() override;
 	void update() override;
+	void deleteEnemies();
 	void enemyShoot();
 	void draw() override;
 	void keysToControls(SDL_Event event);
@@ -34,6 +36,14 @@ public:
 	void loadMap(string name);
 	void loadMapObject(char character, float x, float y);
 	void calculateScroll();
+	void bombAction();
+	void escudoAction();
+	void colisionBomba();
+
+	void colisionPlayerEnemy();
+
+	void deleteProjectiles();
+
 	Actor* message;
 	bool pause;
 	// Elementos de interfaz
@@ -47,16 +57,23 @@ public:
 	float scrollX;
 	int mapWidth;
 	list<Tile*> tiles;
+	list<TileDestructible*> tilesDestructibles;
 
 	Text* textPoints;
 	int points;
 	Text* textLifes;
+	Text* textBombs;
+	Text* textEscudo;
+	int bombs;
 	Actor* backgroundLifes;
+	Actor* backgroundBomb;
 
 	int newEnemyTime = 0;
 	Player* player;
+	Actor* bomb;
 	Background* background;
 	Actor* backgroundPoints;
+	Actor* backgroundEscudo;
 	list<EnemyBase*> enemies;
 	list<Projectile*> projectiles;
 	list<ProjectilEnemigo*> projectilesEnemigo;
@@ -67,6 +84,11 @@ public:
 	int controlMoveX = 0;
 
 	int enemiesInLevel = 0;
+
+	int bombTime = 0;
+	int escudoRecarga = 5;
+	int escudoActivoTime = 200;
+	int escudoPercentage = 0;
 
 };
 

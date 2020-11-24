@@ -1,31 +1,38 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: El directorio intermedio (Debug\) contiene archivos compartidos de otro proyecto (NavesL4.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación.
+  Game.cpp
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\Audio.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\Game.cpp(71,56): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\Game.cpp(71,35): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
   GameLayer.cpp
 D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\Audio.h(6,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
 D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(19,95): warning C4305: 'argumento': truncamiento de 'double' a 'float'
-D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(28,68): warning C4305: 'argumento': truncamiento de 'double' a 'float'
-D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(30,65): warning C4305: 'argumento': truncamiento de 'double' a 'float'
-D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(63,13): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
-D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(64,13): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
-D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(378,24): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(385,24): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(470,35): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(470,26): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(473,39): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(475,43): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(475,34): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(478,42): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(478,33): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(485,51): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(485,42): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(486,39): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(497,43): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(497,34): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(500,42): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(500,33): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(507,35): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(507,26): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(513,43): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(513,34): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(516,42): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(516,33): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(27,68): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(29,65): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(30,67): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(32,68): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(72,13): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(73,13): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(482,24): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(489,24): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(586,35): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(586,26): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(589,39): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(591,43): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(591,34): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(594,42): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(594,33): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(601,51): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(601,42): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(602,39): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(613,43): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(613,34): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(616,42): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(616,33): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(623,35): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(623,26): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(629,43): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(629,34): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(632,42): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\NavesL4\GameLayer.cpp(632,33): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+  Generando código...
   NavesL4.vcxproj -> D:\CLASE\VIDEOJUEGOS\LAB\juego libre\NavesL4\Debug\Juego libre.exe

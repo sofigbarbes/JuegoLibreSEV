@@ -32,6 +32,8 @@ Player::Player(float x, float y, Game* game)
 		164, 40, 4, 4, true, game);
 	aRunningDown = new Animation("res/jugador__corriendo_abajo.png", width, height,
 		164, 40, 4, 4, true, game);
+	aEscudo = new Animation("res/animacion_escudo.png", width, height,
+		164, 40, 6, 4, true, game);
 	animation = aIdleRight;
 
 }
@@ -39,7 +41,9 @@ Player::Player(float x, float y, Game* game)
 
 void Player::update() {
 	// En el aire y moviéndose, PASA a estar saltando
-	
+	if (hasEscudo) {
+		aEscudo->update();
+	}
 
 	if (invulnerableTime > 0) {
 		invulnerableTime--;
@@ -151,6 +155,9 @@ Projectile* Player::shoot() {
 }
 
 void Player::draw(float scrollX) {
+	if (hasEscudo) {
+		aEscudo->draw(x - scrollX, y);
+	}
 	if (invulnerableTime == 0) {
 		animation->draw(x - scrollX, y);
 	}
