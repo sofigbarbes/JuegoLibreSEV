@@ -6,7 +6,7 @@ Player::Player(float x, float y, Game* game)
 	onAir = false;
 	orientation = game->orientationUp;
 	state = game->stateMoving;
-	audioShoot = new Audio("res/efecto_disparo.wav", false);
+	audioShoot = new Audio("res/piu.wav", false);
 	aShootingRight = new Animation("res/jugador__corriendo_derecha.png",
 		width, height, 160, 40, 6, 4, false, game);
 	aShootingLeft = new Animation("res/jugador__corriendo_izquierda.png",

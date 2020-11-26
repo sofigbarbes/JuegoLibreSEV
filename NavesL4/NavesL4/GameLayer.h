@@ -19,6 +19,7 @@
 #include <fstream> // Leer ficheros
 #include <sstream> // Leer líneas / String
 #include <list>
+#include "RecolectableVida.h"
 
 class GameLayer : public Layer
 {
@@ -27,10 +28,13 @@ public:
 	void init() override;
 	void processControls() override;
 	void update() override;
+	void colisionPlayerRecolectable();
 	void deleteEnemies();
 	void enemyShoot();
 	void draw() override;
 	void keysToControls(SDL_Event event);
+	void showHelp();
+	void hideHelp();
 	void mouseToControls(SDL_Event event); // USO DE MOUSE
 	void gamePadToControls(SDL_Event event); // USO DE GAMEPAD
 	void loadMap(string name);
@@ -41,10 +45,11 @@ public:
 	void colisionBomba();
 
 	void colisionPlayerEnemy();
-
+	void colisionProjectilPlayer();
 	void deleteProjectiles();
 
 	Actor* message;
+	Actor* help;
 	bool pause;
 	// Elementos de interfaz
 	SDL_GameController* gamePad;
@@ -77,7 +82,8 @@ public:
 	list<EnemyBase*> enemies;
 	list<Projectile*> projectiles;
 	list<ProjectilEnemigo*> projectilesEnemigo;
-
+	list<RecolectableVida*> recolectables;
+	Audio* audioBomb;
 	bool controlContinue = false;
 	bool controlShoot = false;
 	int controlMoveY = 0;
@@ -89,6 +95,6 @@ public:
 	int escudoRecarga = 5;
 	int escudoActivoTime = 200;
 	int escudoPercentage = 0;
-
+	bool perdio = true;
 };
 

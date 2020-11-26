@@ -17,12 +17,16 @@ void GameLayer::init() {
 
 	buttonJump = new Actor("res/boton_salto.png", WIDTH * 0.9, HEIGHT * 0.55, 100, 100, game);
 	buttonShoot = new Actor("res/boton_disparo.png", WIDTH * 0.75, HEIGHT * 0.83, 100, 100, game);
-
+	audioBomb = new Audio("res/bum.wav", false);
 	space = new Space(0);
 
+	if (perdio) {
+		enemiesInLevel = 0;
+		points = 0;
+		bombs = 0;
+	}
 	scrollX = 0;
-	enemiesInLevel = 0;
-	points = 0;
+
 	cout << "bombs: " << bombs << endl;
 	textPoints = new Text("puntos", WIDTH * 0.92, HEIGHT * 0.04, game);
 	textPoints->content = to_string(points);
@@ -109,10 +113,12 @@ void GameLayer::loadMapObject(char character, float x, float y)
 		break;
 	}
 	case '1': {
-		player = new Player(x, y, game);
+		if (perdio) {
+			player = new Player(x, y, game);
+			player->y = player->y - player->height / 2;
 
+		}
 		// modificación para empezar a contar desde el suelo.
-		player->y = player->y - player->height / 2;
 		space->addDynamicActor(player);
 		textLifes->content = to_string(player->lifes);
 		break;
@@ -131,6 +137,14 @@ void GameLayer::loadMapObject(char character, float x, float y)
 		tile->y = tile->y - tile->height / 2;
 		tilesDestructibles.push_back(tile);
 		space->addStaticActor(tile);
+		break;
+	}
+
+	case 'V': {
+		RecolectableVida* recolectable = new RecolectableVida(x, y, game);
+		recolectable->y = recolectable->y - recolectable->height / 2;
+		recolectables.push_back(recolectable);
+		space->addDynamicActor(recolectable);
 		break;
 	}
 	case 'B': {
@@ -218,9 +232,6 @@ void GameLayer::processControls() {
 	else {
 		player->moveY(0);
 	}
-
-
-
 }
 
 void GameLayer::update() {
@@ -252,6 +263,7 @@ void GameLayer::update() {
 			message = new Actor("res/mensaje_ganar.png", WIDTH * 0.5, HEIGHT * 0.5,
 				WIDTH, HEIGHT, game);
 			pause = true;
+			perdio = false;
 			init();
 		}
 	}
@@ -269,10 +281,11 @@ void GameLayer::update() {
 	// Colisiones
 	colisionBomba();
 	colisionPlayerEnemy();
-
+	colisionProjectilPlayer();
+	colisionPlayerRecolectable();
 	deleteEnemies();
 	deleteProjectiles();
-	
+
 	enemyShoot();
 
 }
@@ -287,6 +300,7 @@ void GameLayer::colisionBomba() {
 		}
 	}
 }
+
 void GameLayer::colisionPlayerEnemy() {
 	for (auto const& enemy : enemies) {
 		if (player->isOverlap(enemy)) {
@@ -294,12 +308,44 @@ void GameLayer::colisionPlayerEnemy() {
 				player->loseLife();
 				textLifes->content = to_string(player->lifes);
 				if (player->lifes <= 0) {
+					perdio = true;
 					init();
 					return;
 				}
 			}
 		}
 	}
+}
+
+
+void GameLayer::colisionProjectilPlayer() {
+	list<ProjectilEnemigo*> deleteProjectilesEnemigo;
+
+	for (auto const& projectile : projectilesEnemigo) {
+		if (player->isOverlap(projectile) && player->hasEscudo == false) {
+			bool pInList = std::find(deleteProjectilesEnemigo.begin(),
+				deleteProjectilesEnemigo.end(),
+				projectile) != deleteProjectilesEnemigo.end();
+			if (!pInList) {
+				deleteProjectilesEnemigo.push_back(projectile);
+			}
+			player->loseLife();
+			
+			if (player->lifes <= 0) {
+				perdio = true;
+				init();
+				return;
+			}
+			textLifes->content = to_string(player->lifes);
+		}
+	}
+	for (auto const& delProjectile : deleteProjectilesEnemigo) {
+		projectilesEnemigo.remove(delProjectile);
+		space->removeDynamicActor(delProjectile);
+		delete delProjectile;
+	}
+	deleteProjectilesEnemigo.clear();
+
 }
 
 void GameLayer::deleteProjectiles() {
@@ -438,8 +484,34 @@ void GameLayer::deleteProjectiles() {
 
 }
 
+
+void GameLayer::colisionPlayerRecolectable() {
+	list<RecolectableVida*> deleteRecolectables;
+	for (auto const& recolectable : recolectables) {
+		if (player->isOverlap(recolectable)) {
+			player->lifes++;
+			textLifes->content = to_string(player->lifes);
+
+			deleteRecolectables.push_back(recolectable);
+
+			bool eInList = std::find(deleteRecolectables.begin(),
+				deleteRecolectables.end(),
+				recolectable) != deleteRecolectables.end();
+
+			if (!eInList) {
+				deleteRecolectables.push_back(recolectable);
+			}
+		}
+	}
+	for (auto const& delRec : deleteRecolectables) {
+		recolectables.remove(delRec);
+	}
+	deleteRecolectables.clear();
+
+}
+
 void GameLayer::deleteEnemies() {
-		list<EnemyBase*> deleteEnemies;
+	list<EnemyBase*> deleteEnemies;
 
 
 	for (EnemyBase* enemy : enemies) {
@@ -504,7 +576,9 @@ void GameLayer::draw() {
 	for (auto const& tile : tilesDestructibles) {
 		tile->draw(scrollX);
 	}
-
+	for (auto const& recolectable : recolectables) {
+		recolectable->draw(scrollX);
+	}
 	for (auto const& projectile : projectiles) {
 		projectile->draw(scrollX);
 	}
@@ -582,39 +656,11 @@ void GameLayer::mouseToControls(SDL_Event event) {
 	// Cada vez que hacen click
 	if (event.type == SDL_MOUSEBUTTONDOWN) {
 		controlContinue = true;
-		if (pad->containsPoint(motionX, motionY)) {
-			pad->clicked = true;
-			// CLICK TAMBIEN TE MUEVE
-			controlMoveX = pad->getOrientationX(motionX);
-		}
-		if (buttonShoot->containsPoint(motionX, motionY)) {
-			controlShoot = true;
-		}
-		if (buttonJump->containsPoint(motionX, motionY)) {
-			controlMoveY = -1;
-		}
 
 	}
 	// Cada vez que se mueve
 	if (event.type == SDL_MOUSEMOTION) {
-		if (pad->clicked && pad->containsPoint(motionX, motionY)) {
-			controlMoveX = pad->getOrientationX(motionX);
-			// Rango de -20 a 20 es igual que 0
-			if (controlMoveX > -20 && controlMoveX < 20) {
-				controlMoveX = 0;
-			}
 
-		}
-		else {
-			pad->clicked = false; // han sacado el ratón del pad
-			controlMoveX = 0;
-		}
-		if (buttonShoot->containsPoint(motionX, motionY) == false) {
-			controlShoot = false;
-		}
-		if (buttonJump->containsPoint(motionX, motionY) == false) {
-			controlMoveY = 0;
-		}
 
 	}
 	// Cada vez que levantan el click
@@ -662,6 +708,9 @@ void GameLayer::keysToControls(SDL_Event event) {
 		case SDLK_e: // bomba
 			escudoAction();
 			break;
+		case SDLK_F1:
+			showHelp();
+			break;
 		case SDLK_SPACE: // dispara
 			controlShoot = true;
 			break;
@@ -691,6 +740,9 @@ void GameLayer::keysToControls(SDL_Event event) {
 				controlMoveY = 0;
 			}
 			break;
+		case SDLK_F1:
+			hideHelp();
+			break;
 		case SDLK_SPACE: // dispara
 			controlShoot = false;
 			break;
@@ -698,12 +750,27 @@ void GameLayer::keysToControls(SDL_Event event) {
 	}
 }
 
+void GameLayer::showHelp() {
+	message = new Actor("res/controles_.png", WIDTH * 0.5, HEIGHT * 0.5,
+		WIDTH, HEIGHT, game);
+	controlContinue = false;
+	pause = true;
+
+
+}
+void GameLayer::hideHelp() {
+	controlContinue = true;
+	pause = false;
+}
+
 void GameLayer::bombAction() {
 	if (bombs != 0) {
 		bombs--;
+		audioBomb->play();
 		textBombs->content = to_string(bombs);
 		for (EnemyBase* enemy : enemies) {
 			if (enemy->isInRender()) {
+				enemy->aDying = enemy->aExplosion;
 				enemy->impacted();
 				cout << enemy->lifes << endl;
 				if (enemy->lifes <= 1) {

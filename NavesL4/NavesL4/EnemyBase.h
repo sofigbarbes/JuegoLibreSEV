@@ -18,6 +18,7 @@ public:
 	int state;
 	Animation* aDying;
 	Animation* aMoving;
+	Animation* aExplosion;
 	Animation* animation; // Referencia a la animación mostrada
 	bool isShooter = false;
 	int lifes;

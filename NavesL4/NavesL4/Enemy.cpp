@@ -10,6 +10,7 @@ Enemy::Enemy(float x, float y, Game* game)
 
 	aMoving = new Animation("res/animacion_pincho.png", width, height,
 		120, 40, 3, 3, true, game);
+	
 	animation = aMoving;
 
 	vx = 3;

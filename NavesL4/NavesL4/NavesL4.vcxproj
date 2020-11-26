@@ -176,6 +176,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="ProjectilEnemigo.cpp" />
+    <ClCompile Include="RecolectableVida.cpp" />
     <ClCompile Include="Space.cpp" />
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="Tile.cpp" />
@@ -197,6 +198,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Projectile.h" />
     <ClInclude Include="ProjectilEnemigo.h" />
+    <ClInclude Include="RecolectableVida.h" />
     <ClInclude Include="Space.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="Tile.h" />
