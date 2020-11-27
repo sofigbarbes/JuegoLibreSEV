@@ -53,9 +53,6 @@ public:
 	bool pause;
 	// Elementos de interfaz
 	SDL_GameController* gamePad;
-	Pad* pad;
-	Actor* buttonJump;
-	Actor* buttonShoot;
 
 	Tile* cup; // Elemento de final de nivel
 	Space* space;

@@ -3,6 +3,8 @@ d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\vc142.idb
 d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\tile.obj
 d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\text.obj
 d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\space.obj
+d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\recolectablevida.obj
+d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\projectilenemigo.obj
 d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\projectile.obj
 d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\player.obj
 d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\pad.obj
@@ -11,29 +13,20 @@ d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\main.obj
 d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\layer.obj
 d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\gamelayer.obj
 d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\game.obj
+d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\enemystatic.obj
+d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\enemybase.obj
 d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\enemy.obj
 d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\background.obj
 d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\audio.obj
 d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\animation.obj
 d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\actor.obj
-d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\enemystatic.obj
-d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\enemybase.obj
-d:\clase\videojuegos\lab\juego libre\navesl4\debug\juego libre.exe
+d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\tiledestructible.obj
 d:\clase\videojuegos\lab\juego libre\navesl4\debug\juego libre.ilk
+d:\clase\videojuegos\lab\juego libre\navesl4\debug\juego libre.exe
 d:\clase\videojuegos\lab\juego libre\navesl4\debug\juego libre.pdb
 d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\juego libre.tlog\cl.command.1.tlog
 d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\juego libre.tlog\cl.read.1.tlog
 d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\juego libre.tlog\cl.write.1.tlog
-d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\juego libre.tlog\link-cvtres.read.1.tlog
-d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\juego libre.tlog\link-cvtres.write.1.tlog
-d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\juego libre.tlog\link-rc.read.1.tlog
-d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\juego libre.tlog\link-rc.write.1.tlog
-d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\juego libre.tlog\link.16720-cvtres.read.1.tlog
-d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\juego libre.tlog\link.16720-cvtres.write.1.tlog
-d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\juego libre.tlog\link.16720-rc.read.1.tlog
-d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\juego libre.tlog\link.16720-rc.write.1.tlog
-d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\juego libre.tlog\link.16720.read.1.tlog
-d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\juego libre.tlog\link.16720.write.1.tlog
 d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\juego libre.tlog\link.command.1.tlog
 d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\juego libre.tlog\link.read.1.tlog
 d:\clase\videojuegos\lab\juego libre\navesl4\navesl4\debug\juego libre.tlog\link.write.1.tlog

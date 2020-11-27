@@ -38,8 +38,6 @@ void EnemyStatic::update() {
 }
 
 void EnemyStatic::impacted() {
-	cout << "Inside Enemy impacted" << endl;
-	cout << "Lifes: " << lifes << endl;
 	if (lifes <= 1) {
 		if (state != game->stateDying) {
 			state = game->stateDead;
