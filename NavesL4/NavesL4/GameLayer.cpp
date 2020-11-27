@@ -28,12 +28,12 @@ void GameLayer::init() {
 	scrollX = 0;
 
 	cout << "bombs: " << bombs << endl;
-	textPoints = new Text("puntos", WIDTH * 0.92, HEIGHT * 0.04, game);
+	textPoints = new Text("puntos", WIDTH * 0.92, HEIGHT * 0.06, game);
 	textPoints->content = to_string(points);
-	textLifes = new Text("vidas", WIDTH * 0.2, HEIGHT * 0.04, game);
-	textBombs = new Text("bombas", WIDTH * 0.35, HEIGHT * 0.04, game);
+	textLifes = new Text("vidas", WIDTH * 0.2, HEIGHT * 0.06, game);
+	textBombs = new Text("bombas", WIDTH * 0.35, HEIGHT * 0.06, game);
 	textBombs->content = to_string(bombs);
-	textEscudo = new Text("escudo", WIDTH * 0.55, HEIGHT * 0.04, game);
+	textEscudo = new Text("escudo", WIDTH * 0.55, HEIGHT * 0.06, game);
 	textEscudo->content = to_string(escudoPercentage) + " %";
 
 
@@ -52,7 +52,7 @@ void GameLayer::init() {
 	tiles.clear();
 	projectiles.clear(); // Vaciar por si reiniciamos el juego
 	projectilesEnemigo.clear(); // Vaciar por si reiniciamos el juego
-
+	recolectables.clear();
 	loadMap("res/" + to_string(game->currentLevel) + ".txt");
 }
 

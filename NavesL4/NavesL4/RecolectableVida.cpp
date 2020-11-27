@@ -2,6 +2,6 @@
 #include "Animation.h"
 
 RecolectableVida::RecolectableVida(float x, float y, Game* game)
-	: Actor("res/icono_recolectable.png", x, y, 40, 40, game) {
+	: Actor("res/corazon_.png", x, y, 40, 36, game) {
 }
 
